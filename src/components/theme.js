@@ -5,6 +5,7 @@ export const theme = {
     text: '#2a2a2a',
     secondary: '#DAA520',
     bg: '#E6EBE3',
+    accent: '#063DFA ',
   },
 
   fonts: {
@@ -27,7 +28,6 @@ export const theme = {
 
   buttons: {
     primary: {
-      // you can reference other values defined in the theme
       color: '#F1F2F9',
       bg: '#2E355D',
     },

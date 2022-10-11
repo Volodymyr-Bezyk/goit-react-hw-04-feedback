@@ -6,7 +6,7 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => (
   <Box display="flex" as="ul">
     {options.map(option => (
       <ListItem key={option}>
-        <FeedbackBtn type="button" onClick={onLeaveFeedback} name={option}>
+        <FeedbackBtn type="button" onClick={onLeaveFeedback(option)}>
           {option}
         </FeedbackBtn>
       </ListItem>

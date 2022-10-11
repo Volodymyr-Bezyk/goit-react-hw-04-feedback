@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom/client';
 
 import FeedbackOptions from './FeedbackOptions';
 import Statistics from './Statistics';
@@ -13,11 +12,8 @@ class App extends Component {
     bad: 0,
   };
 
-  buttonsHandler = e => {
-    return this.setState(prevState => ({
-      [e.target.name]: prevState[e.target.name] + 1,
-    }));
-  };
+  buttonsHandler = option => () =>
+    this.setState(prevState => ({ [option]: prevState[option] + 1 }));
 
   countTotalFeedback = () =>
     Object.values(this.state).reduce((acc, item) => acc + item, 0);
@@ -42,6 +38,7 @@ class App extends Component {
 
         <Section title="Statistics">
           <Statistics
+            options={options}
             good={good}
             neutral={neutral}
             bad={bad}
