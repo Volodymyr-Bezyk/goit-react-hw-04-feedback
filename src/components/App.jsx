@@ -13,7 +13,10 @@ class App extends Component {
   };
 
   buttonsHandler = option => () =>
-    this.setState(prevState => ({ [option]: prevState[option] + 1 }));
+    this.setState(prevState => ({
+      ...prevState,
+      [option]: prevState[option] + 1,
+    }));
 
   countTotalFeedback = () =>
     Object.values(this.state).reduce((acc, item) => acc + item, 0);
